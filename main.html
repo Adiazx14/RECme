@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <meta charset="UTF-8">
+    <title>REC Me</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="./styles.css">
+<style>
+    * {
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    header {
+        font-size: 120px;
+        color: #00205B;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-left: 20px;
+        padding-bottom: 0px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 100px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    div{
+        border-radius: 20px 55px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        padding-right: 20px;
+        padding-top: 5px;
+    }
+    h2{
+        font-size: 90px;
+        width:600px;
+        height:130px;
+        border:5px solid #00205B;
+        text-align: center;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+    body {
+        font-family: "Oswald", sans-serif;
+        font-weight: bold;
+        color: #00205B;
+        font-size: 10px;
+        text-emphasis-color: #30bced;
+        background-color: #FFFFFF;
+        align-items: center;
+    }
+    footer {
+        position: fixed;
+        font-size: 27px;
+        bottom: 0;
+        left: 50px;
+        right: 0;
+        height: 100px;
+    }
+    blur{
+        z-index: 4;
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+
+    }
+    fieldset {
+        background-color: whitesmoke;
+        font-size: 75px;
+        border-radius: 25px 85px;
+        z-index: 5;
+        border-width: 12px;
+        position: absolute;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .floater {
+        position: fixed;
+        bottom: 100px;
+        left: 100px;
+        right: 0px;
+        width:250px;
+        height:250px;
+    }
+    legend {
+        background-color: transparent;
+        color: #00205B;
+        padding: 5px 10px;
+    }
+
+    input {
+        margin: 0px;
+        font-family: "Oswald", sans-serif;
+        border-radius: 10px;
+        border-width: 8px;
+        width: 400px;
+        font-size: 70px;
+        height: 75px;
+    }
+    select{
+        margin: 0px;
+        font-family: "Oswald", sans-serif;
+        border-radius: 10px;
+        width: auto;
+        font-size: 70px;
+        height: auto;
+    }
+
+    @media screen and (min-width:990px) {
+        header{
+            font-size: 60px;
+        }
+        div{
+            width: auto;
+            height: auto;
+        }
+
+        body {
+
+        }
+    }
+</style>
+</head>
+
+<!--start of popup-->
+<blur></blur>
+
+    <form action="/profile.php"style="display: flex; justify-content: center">
+        <fieldset>
+            <legend>Profile:</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="cars">Experience:</label>
+            <select name="cars" id="cars">
+                <optgroup style="font-size: 60px">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </optgroup>
+            </select><br><br>
+            <div style="text-align:center">
+            <input type="submit" value="Submit"style="height: auto">
+            </div>
+        </fieldset>
+    </form>
+<!--end of popup-->
+
+
+<header>
+    <div style="width:865px;height:140px;border:10px solid #00205B;">REC Me
+    <img src="imgs/usericon.png" alt="User Icon" style="width:137px;height:170px;" align="right">
+    </div>
+</header>
+<body>
+
+<h1>
+    <img src="imgs/rightarrow1.svg" alt="User Icon" style="width:80px;height:110px;margin-top: 20px;">
+Fri 9/23
+    <img src="imgs/leftarrow1.svg" alt="User Icon" style="width:80px;height:110px;margin-top: 80px;">
+</h1>
+<p style="text-align: center;font-size: 95px">I'm Free From</p>
+<div class="container">
+    <input type="time" id="fromTime" name="startTime" min="08:00" max="20:00">
+</div>
+<p style="text-align: center;font-size: 95px">to</p>
+<div class="container">
+    <input type="time" id="untilTime" name="endTime" min="08:00" max="20:00"><br><br>
+</div>
+<div class="container">
+    <h2>
+        Rec Me!
+        <br>
+        <br>
+    </h2>
+</div>
+</body>
+<div class="container">
+    <img src="imgs/plusicon.svg" alt="Plus Icon" style="height: 300px;width: 300px">
+</div>
+<footer>
+    <p>Adrián Valdés Díaz, Leo Marek, Joel Villarino, Ryan Gan - HackRice 12 - ©2022</p>
+</footer>
+</html>
