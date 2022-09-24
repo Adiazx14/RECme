@@ -31,12 +31,10 @@ const Main = () => {
 
     return (
         <> 
-            <ul className="sessions">
                 {sessions.map((session)=>{
                     console.log(session.data)
                     return <Session key={session.id} session={session.data}/>
                 })}
-            </ul>
         </>
     )
 }
