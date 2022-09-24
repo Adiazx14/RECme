@@ -13,7 +13,9 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path='/' element={<Main/>}/>
+          <Route path='/' element={<PrivateRoute/>}>
+            <Route path='/' element={<Main/>}/>
+          </Route>
           <Route path='/sign-in' element={<SignIn/>}/>
           <Route path='/sign-up' element={<SignUp/>}/>
           <Route path='/reset-password' element={<ResetPassword/>}/>

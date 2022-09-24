@@ -16,9 +16,14 @@ const Profile = () => {
 
     useEffect(()=> {
         const fetchUser = async() => {
-            const userRef = doc(db, "users", user.uid)
+            try {
+            const userRef = doc(db, "users", auth.currentUser.uid)
             const userSnap = await getDoc(userRef)
             setUser(userSnap.data())
+            }
+            catch(err) {
+                alert(err)
+            }
         }
 
         fetchUser()
