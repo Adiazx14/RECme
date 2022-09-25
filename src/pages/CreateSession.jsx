@@ -39,9 +39,9 @@ const CreateSession = () => {
             <legend>New Workout:</legend>
             <div className={"centered"}>
             <form onSubmit={onSubmit}>
-                <input type="text" placeholder="Type of Workout" value={typeOfWorkout} id="typeOfWorkout" onChange={onChange}/>
-                <input type="number" placeholder="Max People" value={maxPeople} id="maxPeople" onChange={onChange}/>
-                <input type="datetime-local" min={new Date().toISOString().slice(0, 16)} placeholder="startTime" value={startTime} id="startTime" onChange={onChange}/>
+                <input type="text" required placeholder="Type of Workout" value={typeOfWorkout} id="typeOfWorkout" onChange={onChange}/>
+                <input type="number" required placeholder="Max People" value={maxPeople} id="maxPeople" onChange={onChange}/>
+                <input type="datetime-local" required min={new Date().toISOString().slice(0, 16)} placeholder="startTime" value={startTime} id="startTime" onChange={onChange}/>
                 <input type="submit" value="Create"/>
             </form>
             </div>
