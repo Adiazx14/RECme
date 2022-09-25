@@ -3,19 +3,29 @@ import { doc, updateDoc } from "firebase/firestore"
 import { useNavigate } from "react-router-dom"
 import { db } from "../firebase.config"
 import join from "../images/join.svg"
+import leave from "../images/leave.svg"
 
 const Session = ({session, id}) => {
     const navigate = useNavigate()
+    const auth = getAuth()
     const joinSession = async() => {
-        const auth = getAuth()
         console.log(session)
         try {
             if (session.peopleIds.length===session.maxPeople){
                 alert("Session is full")
             }
             else if (session.peopleIds.includes(auth.currentUser.uid)) {
+<<<<<<< HEAD
                 
                 alert("You are already in that group")
+=======
+                const docRef = doc(db, "sessions", id)
+                await updateDoc(docRef, {...session, 
+                                        peopleNames: session.peopleNames.filter((name)=>name!==auth.currentUser.displayName),
+                                        peopleIds: session.peopleIds.filter((id)=>id!==auth.currentUser.uid)
+                                    })
+                alert("You left the group")
+>>>>>>> e34e17356a495c184451c0224872ded46dd863a6
             }
             else {
                 const docRef = doc(db, "sessions", id)
@@ -23,7 +33,7 @@ const Session = ({session, id}) => {
                                         peopleNames:[...session.peopleNames, auth.currentUser.displayName],
                                         peopleIds:[...session.peopleIds, auth.currentUser.uid]
                                     })
-                navigate("/profile")
+                alert("Joined succesfully!")
             }
 
     }
@@ -40,8 +50,13 @@ const Session = ({session, id}) => {
             </div>
 
             <div id="d2s">
+<<<<<<< HEAD
                 <p className="pie" >{session.peopleIds.length}/{session.maxPeople}</p>
                 <img onClick={joinSession} alt="join" src={join} id="img10"/>
+=======
+                <p>{session.peopleIds.length}/{session.maxPeople}</p>
+                <img onClick={joinSession} alt="join" src={session.peopleIds.includes(auth.currentUser.uid)?leave:join} id="img10"/>
+>>>>>>> e34e17356a495c184451c0224872ded46dd863a6
             </div>
         </div>
     )

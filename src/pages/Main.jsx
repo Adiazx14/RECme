@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import {Link, useNavigate} from "react-router-dom"
 import { getAuth } from "firebase/auth"
-import { collection, getDoc, getDocs, query } from "firebase/firestore"
+import { collection, getDoc, getDocs, onSnapshot, query } from "firebase/firestore"
 import { db } from "../firebase.config"
 import useAuthStatus from "../hooks/useAuthStatus"
 import Session from "../components/Session"
@@ -24,8 +24,16 @@ const Main = () => {
             setSessions(sessions)
             })
         }
+        const unsubscribe = onSnapshot(
+        collection(db, "sessions"), 
+        (snapshot) => {
+             fetchSessions()
+            },
+        (error) => {
+            alert(error)
+            
+        });
         
-        fetchSessions()
     }, [])
 
     return (
