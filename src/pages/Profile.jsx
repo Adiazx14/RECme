@@ -31,12 +31,26 @@ const Profile = () => {
     }, [user])
     return (
         <>
-         
-            <p>Welcome {user.name}</p>
-            <p>Phone: {user.phone}</p>
-            <p>Experience: {user.experience}</p>
-            <p onClick={signOut}>Log Out</p>
-        
+            <fieldset>
+                <legend>Profile:</legend>
+                <p>{user.name}</p>
+                <label htmlFor="phone">Phone:{"\n"}</label>
+                <input type="number" id="phone" name="phone" value={user.phoneNumber}/>
+                <label htmlFor="email">Email:{"\n"}</label>
+                <input type="email" id="email" name="email" disabled value={user.email}/>
+                <label htmlFor="level">Experience:</label>
+            <select name="level" id="level">
+                <optgroup id="ogroup">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                </optgroup>
+            </select>
+            <div id="intype">
+                <input type="submit" value="Submit" id="sub"></input>
+            </div>
+                <p onClick={signOut} id="logot">Log Out</p>
+            </fieldset>
         </>
     )
 }
