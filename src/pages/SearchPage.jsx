@@ -1,4 +1,3 @@
-import { async } from "@firebase/util"
 import { getAuth } from "firebase/auth"
 import { addDoc, collection, doc, getDocs, onSnapshot, orderBy, query, setDoc, where } from "firebase/firestore"
 import { useEffect, useState } from "react"
