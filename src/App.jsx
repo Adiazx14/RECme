@@ -9,6 +9,7 @@ import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
 import GoogleAuth from './components/GoogleAuth';
 import CreateSession from './pages/CreateSession';
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route path='/create-session' element={<PrivateRoute/>}>
             <Route path='/create-session' element={<CreateSession/>}/>
+          </Route>
+          <Route path='/search-page' element={<PrivateRoute/>}>
+            <Route path='/search-page' element={<SearchPage/>}/>
           </Route>
           <Route path='/sign-in' element={<GoogleAuth/>}/>
           <Route path='/reset-password' element={<ResetPassword/>}/>

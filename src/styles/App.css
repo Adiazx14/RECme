@@ -57,11 +57,19 @@
 }
 #lmaoxd{
   text-align: center;
-  font-size: 95px;
+  font-size: 70px;
 }
 #timerange{
   text-align: center;
-  font-size: 95px
+  font-size: 70px
+}
+#sbutton{
+  display: flex;
+  justify-content: center;
+  font-size: 60px;
+  margin: auto;
+  height: auto;
+  width: 70%;
 }
 #arrow{
   width:80px;
