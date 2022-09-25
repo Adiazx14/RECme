@@ -1,13 +1,15 @@
 import { getAuth, updateProfile } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { collection, doc, getDoc, onSnapshot, updateDoc} from "firebase/firestore"
+import { collection, doc, getDoc, getDocs, onSnapshot, orderBy, query, updateDoc, where} from "firebase/firestore"
 import { db } from "../firebase.config"
+import Session from "../components/Session"
 
 const Profile = () => {
     const navigate = useNavigate()
     const auth = getAuth()
     const [user, setUser] = useState(auth.currentUser)
+    const [sessions, setSessions] = useState([])
     const [userData, setUserData] = useState({
         experience: "",
         phone: 0
@@ -57,9 +59,37 @@ const Profile = () => {
                 alert(err)
             }
         }
-        fetchUser()     
+        fetchUser()
+        const fetchSessions = async() => {
+            const sessionsRef = collection(db, "sessions")
+            const q = query(
+                sessionsRef,
+                where("peopleIds", "array-contains", auth.currentUser.uid),
+                orderBy("startTime", "asc")
+                )
+            const sessionsSnap = await getDocs(q)
+            const sessions = []
+            sessionsSnap.forEach(doc=>{
+                sessions.push({
+                    id: doc.id,
+                    data: doc.data()
+                })
+            setSessions(sessions)
+            })
+        }
+        const unsubscribe = onSnapshot(
+        collection(db, "sessions"), 
+        (snapshot) => {
+             fetchSessions()
+            },
+        (error) => {
+            alert(error)
+            
+        });
+        
     }, [])
     return (
+        <>
         <form onSubmit={onSubmit}>
             <fieldset>
                 <legend>Profile:</legend>
@@ -83,6 +113,14 @@ const Profile = () => {
                 <p onClick={signOut} id="logot">Log Out</p>
             </fieldset>
         </form>
+        <div className="">
+            <span className="head1">Sessions</span>
+            {sessions.map((session)=>{
+                    return <Session key={session.id} session={session.data} id={session.id}/>
+            })}
+            <div id="rectangle"></div>
+        </div>
+        </>
     )
 }
 
