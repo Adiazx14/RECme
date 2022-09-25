@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import {useNavigate} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import { getAuth } from "firebase/auth"
 import { collection, getDoc, getDocs, query } from "firebase/firestore"
 import { db } from "../firebase.config"
@@ -32,7 +32,7 @@ const Main = () => {
         <>
             <head1>Open Sessions</head1>
             <div className="floater">
-                <img src={plus} alt="Plus Icon" align="left"/>
+                <Link to="/create-session"><img src={plus} alt="Plus Icon" align="left"/></Link>
             </div>
             {sessions.map((session)=>{
                     console.log(session.data)

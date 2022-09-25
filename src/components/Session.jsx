@@ -4,8 +4,8 @@ const Session = ({session}) => {
     return (
         <div className="container">
             <div1>
-                <p>{session["people"][0]}</p>
-                <span>{Date(session.startTime).substring(4,21)}</span>
+                <p>Ryan</p>
+                <span>{new Date(session.startTime).toLocaleString() }</span>
                 <p id="clp">{session.typeOfWorkout}</p>
             </div1>
 
