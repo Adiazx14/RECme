@@ -41,7 +41,7 @@ const Session = ({session, id}) => {
             <div>
                 <p id="clp">{session.typeOfWorkout}</p>
                 <span>{new Date(session.startTime).toLocaleString() }</span>
-                <p>{session.peopleNames[0]}</p>
+                <p><a href={"mailto:"+auth.currentUser.emai }>{session.peopleNames[0]}</a></p>
             </div>
 
             <div id="d2s">

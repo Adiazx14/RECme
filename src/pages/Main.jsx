@@ -48,8 +48,8 @@ const Main = () => {
             <span className="head1">Sessions</span>
 
             <Link to="/profile"><img src={usericon} alt="Profile" className="uicon" align="right"/></Link>
-            <Link to="/search-page"><img src={search} alt="Search" id="search" className="uicon" align="right"/></Link>
-            <div className="floater">
+{/*             <Link to="/search-page"><img src={search} alt="Search" id="search" className="uicon" align="right"/></Link>
+ */}            <div className="floater">
                 <Link to="/create-session"><img src={plus} alt="Plus Icon" align="left"/></Link>
             </div>
             {sessions.map((session)=>{

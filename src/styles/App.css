@@ -61,6 +61,11 @@ a{
 #rme{
   border:10px solid #00205B;
 }
+
+.container a {
+  text-decoration: underline;
+  color: #00205B;
+}
 #img11{
   width:70px;
   height:70px;
