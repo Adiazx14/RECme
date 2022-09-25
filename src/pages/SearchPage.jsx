@@ -24,15 +24,19 @@ const SearchPage = () => {
             orderBy("startTime", "asc")
             )
         const sessionsSnap = await getDocs(q)
-        const sessions = []
-        sessionsSnap.forEach(doc=>{
-            sessions.push({
-                id: doc.id,
-                data: doc.data()
+        if (sessionsSnap.size>0) {
+            const sessions = []
+            sessionsSnap.forEach(doc=>{
+                sessions.push({
+                    id: doc.id,
+                    data: doc.data()
+                })
+                setSessions(sessions)
+                setLooking(false)     
             })
-        setSessions(sessions)
-        setLooking(false)
-        })
+        }
+
+       else  alert("No sessions found for those dates")
     }
     catch (err) {
         alert(err)

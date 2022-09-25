@@ -16,7 +16,7 @@ const Session = ({session, id}) => {
             if (session.peopleIds.includes(auth.currentUser.uid) && session.peopleIds.length===1) {
                 await deleteDoc(docRef)
             }
-            else if (session.peopleIds.length===parseInt(session.maxPeople)){
+            else if (session.peopleIds.length===parseInt(session.maxPeople) && !session.peopleIds.includes(auth.currentUser.uid)){
                 alert("Session is full")
             }
             else if (session.peopleIds.includes(auth.currentUser.uid)) {
