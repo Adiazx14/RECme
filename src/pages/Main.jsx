@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import {Link, useNavigate} from "react-router-dom"
 import { getAuth } from "firebase/auth"
-import { collection, getDoc, getDocs, onSnapshot, query } from "firebase/firestore"
+import { collection, getDoc, getDocs, onSnapshot, orderBy, query } from "firebase/firestore"
 import { db } from "../firebase.config"
 import useAuthStatus from "../hooks/useAuthStatus"
 import Session from "../components/Session"
@@ -16,7 +16,11 @@ const Main = () => {
     useEffect(()=>{
         const fetchSessions = async() => {
             const sessionsRef = collection(db, "sessions")
-            const sessionsSnap = await getDocs(sessionsRef)
+            const q = query(
+                sessionsRef,
+                orderBy("startTime", "asc")
+                )
+            const sessionsSnap = await getDocs(q)
             const sessions = []
             sessionsSnap.forEach(doc=>{
                 sessions.push({
