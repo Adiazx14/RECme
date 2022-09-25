@@ -30,7 +30,7 @@ const Main = () => {
 
     return (
         <>
-            <p className="head1">Open Sessions</p>
+            <p className="head1">Sessions</p>
             <div className="floater">
                 <Link to="/create-session"><img src={plus} alt="Plus Icon" align="left"/></Link>
             </div>
