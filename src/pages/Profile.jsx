@@ -14,6 +14,10 @@ const Profile = () => {
         navigate("/")
     }
 
+    const onSubmit = ()=>{
+
+    }
+
     useEffect(()=> {
         const fetchUser = async() => {
             try {
@@ -25,12 +29,12 @@ const Profile = () => {
                 alert(err)
             }
         }
-
+    
         fetchUser()
         
     }, [])
     return (
-        <>
+        <form onSubmit={onSubmit}>
             <fieldset>
                 <legend>Profile:</legend>
                 <p>{user.name}</p>
@@ -51,7 +55,7 @@ const Profile = () => {
             </div>
                 <p onClick={signOut} id="logot">Log Out</p>
             </fieldset>
-        </>
+        </form>
     )
 }
 
