@@ -202,6 +202,11 @@ footer {
   right: 0;
   height: 100px;
 }
+#rectangle{
+  width:200px;
+  height:150px;
+  background:transparent;
+}
 blur{
   z-index: 4;
   position: absolute;

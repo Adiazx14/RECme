@@ -38,6 +38,7 @@ const Main = () => {
                     console.log(session.data)
                     return <Session key={session.id} session={session.data}/>
             })}
+            <div id="rectangle"></div>
         </>
     )
 }
