@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { doc, getDoc, updateDoc} from "firebase/firestore"
 import { db } from "../firebase.config"
-import UserPopUp from "../components/UserPopUp"
 
 const Profile = () => {
     const navigate = useNavigate()
@@ -37,7 +36,6 @@ const Profile = () => {
             <p>Phone: {user.phone}</p>
             <p>Experience: {user.experience}</p>
             <p onClick={signOut}>Log Out</p>
-            <UserPopUp/>
         
         </>
     )

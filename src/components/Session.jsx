@@ -10,7 +10,6 @@ const Session = ({session}) => {
         </div>
         <div className="div2" id="d2s">
             <p className="pie" id="pie1">{session.people.length}/{session.maxPeople}</p>
-            <img alt="join" src={join} id="img10"/>
         </div>
     </div>
     )

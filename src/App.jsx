@@ -7,6 +7,7 @@ import { Route } from 'react-router';
 import Main from './pages/Main';
 import Profile from './pages/Profile';
 import PrivateRoute from './components/PrivateRoute';
+import GoogleAuth from './components/GoogleAuth';
 
 function App() {
   return (
@@ -16,8 +17,7 @@ function App() {
           <Route path='/' element={<PrivateRoute/>}>
             <Route path='/' element={<Main/>}/>
           </Route>
-          <Route path='/sign-in' element={<SignIn/>}/>
-          <Route path='/sign-up' element={<SignUp/>}/>
+          <Route path='/sign-in' element={<GoogleAuth/>}/>
           <Route path='/reset-password' element={<ResetPassword/>}/>
           <Route path='/profile' element={<PrivateRoute/>}>
             <Route path='/profile' element={<Profile/>}/>

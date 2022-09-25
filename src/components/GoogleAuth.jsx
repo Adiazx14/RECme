@@ -32,7 +32,7 @@ const GoogleAuth = () => {
 
     return (
     <div className="socialDiv">
-        <p>Sign {location.pathname === "/sign-up"? "up": "in"} with</p>
+        <p>Sign into the App with</p>
         <button className="socialBtn" onClick={onSubmit}>
             <img alt = "google icon" className="socialImg" src={googleIcon} />
         </button>
