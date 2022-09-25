@@ -80,7 +80,11 @@ const Profile = () => {
         const unsubscribe = onSnapshot(
         collection(db, "sessions"), 
         (snapshot) => {
+            if (snapshot)
+            {
              fetchSessions()
+            }
+            else setSessions([])
             },
         (error) => {
             alert(error)
@@ -113,13 +117,15 @@ const Profile = () => {
                 <p onClick={signOut} id="logot">Log Out</p>
             </fieldset>
         </form>
+        {sessions.length>0 &&
         <div className="">
-            <span className="head1">Sessions</span>
+            <span className="head1">My sessions</span>
             {sessions.map((session)=>{
                     return <Session key={session.id} session={session.data} id={session.id}/>
             })}
             <div id="rectangle"></div>
         </div>
+        }
         </>
     )
 }

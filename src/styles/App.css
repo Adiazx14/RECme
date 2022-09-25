@@ -383,7 +383,6 @@ header {
 .container{
   display: flex;
   font-size: 30px;
-  width:90%;
   height: auto;
   align-content: space-around;
   margin: auto;
@@ -405,6 +404,15 @@ div{
   padding-right: 20px;
   padding-top: 5px;
 }
+
+.container, .container > * {
+  padding: 0px;
+}
+
+.container {
+  padding: 5px 20px;
+}
+
 h2{
   font-size: 90px;
   width:600px;
@@ -442,19 +450,7 @@ footer {
   height:150px;
   background:transparent;
 }
-blur{
-  z-index: 4;
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
 
-}
 fieldset {
   background-color: whitesmoke;
   font-size: 30px;
@@ -463,8 +459,7 @@ fieldset {
   width: 80%;
   height: auto;
   border-width: 12px;
-  position: absolute;
-  margin: 0 auto;
+    margin: 0 auto;
   text-align: left;
 }
 .floater {
