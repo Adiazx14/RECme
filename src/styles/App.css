@@ -5,8 +5,25 @@
   align-items: center;
 }
 #uicon{
-  height: 90px;
+  height: 65px;
+  margin-top: 13px;
+  margin-right: 10px;
 
+}
+#bbutton{
+  display: flex;
+  justify-content: center;
+  border-radius: 15px;
+  font-size: 40px;
+  border-color: #890f0f;
+  color: #890f0f;
+  margin: auto;
+  height: auto;
+  width: 70%;
+
+}
+a{
+  text-decoration: none;
 }
 .socialBtn {
   cursor: pointer;
@@ -65,8 +82,10 @@
 #sbutton{
   display: flex;
   justify-content: center;
+  border-radius: 15px;
   font-size: 60px;
   margin: auto;
+  margin-bottom: 13px;
   height: auto;
   width: 70%;
 }
@@ -368,7 +387,7 @@ header {
   height: auto;
   align-content: space-around;
   margin: auto;
-  margin-bottom: 37px;
+  margin-bottom: 20px;
   border:5px solid #00205B;
   text-align: left;
   align-items: baseline;

@@ -1,7 +1,7 @@
 import { getAuth } from "firebase/auth"
 import { addDoc, collection, doc, setDoc } from "firebase/firestore"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import { db } from "../firebase.config"
 
 const CreateSession = () => {
@@ -36,6 +36,7 @@ const CreateSession = () => {
                 <input type="datetime-local" required min={new Date().toISOString().slice(0, 16)} placeholder="endTime" value={endTime} id="endTime" onChange={onChange}/>
             </div>
                 <input type="submit" id="sbutton" value="RECme!"/>
+            <Link to="/"><input type="submit" id="bbutton" value="Back"/></Link>
         </form>
 
     )
