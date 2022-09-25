@@ -190,6 +190,10 @@ body {
   background-color: #FFFFFF;
   align-items: center;
 }
+centered{
+  display: flex;
+  justify-content: center;
+}
 footer {
   position: fixed;
   font-size: 27px;
@@ -230,6 +234,9 @@ fieldset {
   width:150px;
   height:150px;
 }
+sbutt{
+  height: 100px;
+}
 legend {
   background-color: transparent;
   color: #00205B;
@@ -246,7 +253,7 @@ input {
   border-width: 8px;
   width: 200px;
   font-size: 30px;
-  height: 40px;
+  height: auto;
 }
 #logot{
   text-align: center;
