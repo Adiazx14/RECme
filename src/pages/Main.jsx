@@ -8,14 +8,12 @@ import Session from "../components/Session"
 
 const Main = () => {
     const navigate = useNavigate()
-    const auth = getAuth()
     const [sessions, setSessions] = useState([])
 
     useEffect(()=>{
         const fetchSessions = async() => {
             const sessionsRef = collection(db, "sessions")
-            const q = query(sessionsRef)
-            const sessionsSnap = await getDocs(q)
+            const sessionsSnap = await getDocs(sessionsRef)
             const sessions = []
             sessionsSnap.forEach(doc=>{
                 sessions.push({

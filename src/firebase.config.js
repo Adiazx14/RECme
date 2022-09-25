@@ -6,12 +6,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBKiu62W79UOIyjetgovpGATEjMmBpILM0",
-  authDomain: "recme-rice.firebaseapp.com",
-  projectId: "recme-rice",
-  storageBucket: "recme-rice.appspot.com",
-  messagingSenderId: "11567017133",
-  appId: "1:11567017133:web:82c8c0ee528b386c8c6a24"
+  apiKey: "AIzaSyAbMG19-5scjc7MPNduPsDJpXvfYvC6L3Q",
+  authDomain: "recme-dev.firebaseapp.com",
+  projectId: "recme-dev",
+  storageBucket: "recme-dev.appspot.com",
+  messagingSenderId: "340671970973",
+  appId: "1:340671970973:web:2437f2d8fb8f5861f6de74"
 };
 
 // Initialize Firebase
