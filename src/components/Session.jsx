@@ -46,13 +46,8 @@ const Session = ({session, id}) => {
             </div>
 
             <div id="d2s">
-
-                <p>{session.peopleIds.length}/{session.maxPeople}</p>
-                <img onClick={joinSession} alt="join" src={session.peopleIds.includes(auth.currentUser.uid)?leave:join} id="img10"/>
-
                 <p className="pie" >{session.peopleIds.length}/{session.maxPeople}</p>
                 <img onClick={joinSession} alt="join" src={join} id="img10"/>
-
             </div>
         </div>
     )
