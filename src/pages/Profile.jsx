@@ -52,7 +52,6 @@ const Profile = () => {
             try {
             const userRef = doc(db, "users", auth.currentUser.uid)
             const userSnap = await getDoc(userRef)
-            console.log(userSnap.data())
             setUserData(userSnap.data())
             }
             catch(err) {
@@ -124,7 +123,8 @@ const Profile = () => {
         {sessions.length>0 &&
         <div className="">
             <span className="head1">My sessions</span>
-            {sessions.map((session)=>{
+            {sessions.length>0 &&
+             sessions.map((session)=>{
                     return <Session key={session.id} session={session.data} id={session.id}/>
             })}
             <div id="rectangle"></div>

@@ -9,13 +9,15 @@ const Session = ({session, id}) => {
     const navigate = useNavigate()
     const auth = getAuth()
     const joinSession = async() => {
+        console.log(session)
         try {
             const docRef = doc(db, "sessions", id)
-            if (session.peopleIds.length===session.maxPeople){
-                alert("Session is full")
-            }
-            else if (session.peopleIds.includes(auth.currentUser.uid) && session.peopleIds.length===1) {
+
+            if (session.peopleIds.includes(auth.currentUser.uid) && session.peopleIds.length===1) {
                 await deleteDoc(docRef)
+            }
+            else if (session.peopleIds.length===parseInt(session.maxPeople)){
+                alert("Session is full")
             }
             else if (session.peopleIds.includes(auth.currentUser.uid)) {
                 await updateDoc(docRef, {...session, 
