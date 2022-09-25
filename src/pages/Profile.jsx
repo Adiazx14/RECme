@@ -1,21 +1,48 @@
-import { getAuth } from "firebase/auth"
+import { getAuth, updateProfile } from "firebase/auth"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { doc, getDoc, updateDoc} from "firebase/firestore"
+import { collection, doc, getDoc, onSnapshot, updateDoc} from "firebase/firestore"
 import { db } from "../firebase.config"
 
 const Profile = () => {
     const navigate = useNavigate()
     const auth = getAuth()
     const [user, setUser] = useState(auth.currentUser)
+    const [userData, setUserData] = useState({
+        experience: "",
+        phone: 0
+    })
+    const {experience, phone} = userData
+
+    const onChange = ((e)=>{
+        setUserData((prevState)=> ({
+            ...prevState,
+            [e.target.id]: e.target.value
+        }))
+    })
 
     const signOut = () => {
         auth.signOut()
         navigate("/")
     }
 
-    const onSubmit = ()=>{
-
+    const onSubmit = async(e)=>{
+        e.preventDefault()
+        try {
+            const userRef = doc(db, "users", auth.currentUser.uid)
+            await updateDoc(userRef, {
+                experience,
+                phone
+            })
+            await updateProfile(auth.currentUser,{
+                phoneNumber:phone
+            })
+            alert("User Info Updated")
+            navigate("/")
+        } 
+        catch (error) {
+            alert(error)
+        }
     }
 
     useEffect(()=> {
@@ -23,15 +50,14 @@ const Profile = () => {
             try {
             const userRef = doc(db, "users", auth.currentUser.uid)
             const userSnap = await getDoc(userRef)
-            setUser(userSnap.data())
+            console.log(userSnap.data())
+            setUserData(userSnap.data())
             }
             catch(err) {
                 alert(err)
             }
         }
-    
-        fetchUser()
-        
+        fetchUser()     
     }, [])
     return (
         <form onSubmit={onSubmit}>
@@ -39,15 +65,16 @@ const Profile = () => {
                 <legend>Profile:</legend>
                 <p>{user.name}</p>
                 <label htmlFor="phone">Phone:{"\n"}</label>
-                <input type="number" id="phone" name="phone" value={user.phoneNumber}/>
+                <input onChange={onChange} type="tel" id="phone" name="phone" value={phone}/>
                 <label htmlFor="email">Email:{"\n"}</label>
                 <input type="email" id="email" name="email" disabled value={user.email}/>
                 <label htmlFor="level">Experience:</label>
-            <select name="level" id="level">
+            <select onChange={onChange} name="level" id="experience" value={experience}>
                 <optgroup id="ogroup">
-                    <option value="beginner">Beginner</option>
-                    <option value="intermediate">Intermediate</option>
-                    <option value="advanced">Advanced</option>
+                    <option value="" disabled></option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
                 </optgroup>
             </select>
             <div id="intype">
