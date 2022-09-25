@@ -25,7 +25,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-Working out is critical to staying happy and health in college but traditionally toxic campus gym environments are often hostile towards newcomers. RECme (www.recme.tech) is an open-source platform that aims to help make campus gyms more accessible to those without extensive gym experience. Users can easily find gym buddies at their level to learn with them or experienced gym buddies to show them the ropes. 
+Working out is critical to staying happy and healthy in college but traditionally toxic campus gym environments are often hostile towards newcomers. RECme (www.recme.tech) is an open-source platform that aims to help make campus gyms more accessible to those without extensive gym experience. Users can easily find gym buddies at their level to learn with them or experienced gym buddies to show them the ropes. 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
