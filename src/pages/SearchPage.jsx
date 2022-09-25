@@ -42,18 +42,6 @@ const SearchPage = () => {
         alert(err)
     }
     }
-    useEffect(()=>{
-
-        const unsubscribe = onSnapshot(
-            collection(db, "sessions"), 
-            (snapshot) => {
-                fetchSessions()
-                },
-            (error) => {
-                alert(error)
-                
-            })
-    }, [])
 
     const onChange = ((e)=>{
         setTime((prevState)=> ({
