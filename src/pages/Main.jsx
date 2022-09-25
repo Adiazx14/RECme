@@ -22,9 +22,9 @@ const Main = () => {
                     data: doc.data()
                 })
             setSessions(sessions)
-            console.log(sessions)
             })
         }
+        
         fetchSessions()
     }, [])
 
@@ -35,8 +35,7 @@ const Main = () => {
                 <Link to="/create-session"><img src={plus} alt="Plus Icon" align="left"/></Link>
             </div>
             {sessions.map((session)=>{
-                    console.log(session.data)
-                    return <Session key={session.id} session={session.data}/>
+                    return <Session key={session.id} session={session.data} id={session.id}/>
             })}
             <div id="rectangle"></div>
         </>
