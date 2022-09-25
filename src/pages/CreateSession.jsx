@@ -25,7 +25,7 @@ const CreateSession = () => {
             const auth =  getAuth()
             const docRef = collection(db, "sessions")
             console.log(startTime)
-            await addDoc(docRef, {typeOfWorkout, maxPeople, startTime, people:[auth.currentUser.uid]})
+            await addDoc(docRef, {typeOfWorkout, maxPeople, startTime, peopleIds:[auth.currentUser.uid], peopleNames:[auth.currentUser.displayName]})
             alert("Session Created")
             navigate("/")
         }
