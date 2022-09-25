@@ -20,12 +20,11 @@
 }
 #d2s{
   display: flex;
+  flex-direction: column;
   margin: auto;
 }
 #pie1{
-  --p:57;
-  --b:20;
-  --c:#00205BFF;
+
 }
 #img10{
   height: 100px;
@@ -145,6 +144,9 @@ header {
   font-weight: bold;
 }
 .pie:before {
+  --b:15px;
+  --p:10;
+  --c:#00205BFF;
   content: "";
   position: absolute;
   border-radius: 50%;
