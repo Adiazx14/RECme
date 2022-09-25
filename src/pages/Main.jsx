@@ -6,6 +6,7 @@ import { db } from "../firebase.config"
 import useAuthStatus from "../hooks/useAuthStatus"
 import Session from "../components/Session"
 import plus from "../images/plusicon.svg"
+import usericon from "../images/usericon.svg"
 
 const Main = () => {
     const navigate = useNavigate()
@@ -38,7 +39,8 @@ const Main = () => {
 
     return (
         <>
-            <p className="head1">Sessions</p>
+            <span className="head1">Sessions</span>
+            <Link to="/profile"><img src={usericon} alt="User Icon" id="uicon" align="right"/></Link>
             <div className="floater">
                 <Link to="/create-session"><img src={plus} alt="Plus Icon" align="left"/></Link>
             </div>

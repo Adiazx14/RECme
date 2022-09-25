@@ -4,7 +4,10 @@
   flex-direction: column;
   align-items: center;
 }
+#uicon{
+  height: 90px;
 
+}
 .socialBtn {
   cursor: pointer;
   display: flex;
