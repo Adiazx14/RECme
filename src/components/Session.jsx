@@ -20,8 +20,6 @@ const Session = ({session, id}) => {
                                         peopleNames: session.peopleNames.filter((name)=>name!==auth.currentUser.displayName),
                                         peopleIds: session.peopleIds.filter((id)=>id!==auth.currentUser.uid)
                                     })
-                alert("You left the group")
-
             }
             else {
                 const docRef = doc(db, "sessions", id)
@@ -29,7 +27,6 @@ const Session = ({session, id}) => {
                                         peopleNames:[...session.peopleNames, auth.currentUser.displayName],
                                         peopleIds:[...session.peopleIds, auth.currentUser.uid]
                                     })
-                alert("Joined succesfully!")
             }
 
     }
