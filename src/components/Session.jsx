@@ -9,7 +9,6 @@ const Session = ({session, id}) => {
     const navigate = useNavigate()
     const auth = getAuth()
     const joinSession = async() => {
-        console.log(session)
         try {
             const docRef = doc(db, "sessions", id)
             if (session.peopleIds.length===session.maxPeople){

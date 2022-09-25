@@ -33,7 +33,8 @@ const Main = () => {
         const unsubscribe = onSnapshot(
         collection(db, "sessions"), 
         (snapshot) => {
-             fetchSessions()
+            console.log(snapshot)
+            fetchSessions()
             },
         (error) => {
             alert(error)

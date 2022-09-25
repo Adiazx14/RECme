@@ -80,7 +80,7 @@ const Profile = () => {
         const unsubscribe = onSnapshot(
         collection(db, "sessions"), 
         (snapshot) => {
-            if (snapshot)
+            if (snapshot.size>0)
             {
              fetchSessions()
             }
