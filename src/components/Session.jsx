@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { db } from "../firebase.config"
 import join from "../images/join.svg"
 import leave from "../images/leave.svg"
-
+import React from 'react';
 const Session = ({session, id}) => {
     const navigate = useNavigate()
     const auth = getAuth()
@@ -46,7 +46,7 @@ const Session = ({session, id}) => {
             </div>
 
             <div id="d2s">
-                <p className="pie" >{session.peopleIds.length}/{session.maxPeople}</p>
+                <p className={"pie"+Math.ceil(session.peopleIds.length*10/session.maxPeople)} >{session.peopleIds.length}/{session.maxPeople}</p>
                 <img onClick={joinSession} alt="join" src={session.peopleIds.includes(auth.currentUser.uid)?leave:join} id="img10"/>
             </div>
         </div>
