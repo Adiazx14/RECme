@@ -12,8 +12,8 @@
   align-items: center;
   padding: 0.75rem;
   margin: 1.5rem;
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   background-color: #ffffff;
   border-radius: 50%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -28,18 +28,18 @@
   --c:#00205BFF;
 }
 #img10{
-  height: auto;
-  width: auto;
+  height: 100px;
+  width: 100px;
 }
 #clp{
-  font-size: 50px;
+  font-size: 30px;
 }
 #rme{
   border:10px solid #00205B;
 }
 #img11{
-  width:130px;
-  height:130px;
+  width:70px;
+  height:70px;
 }
 #i1{
   height: auto;
@@ -116,6 +116,47 @@ header {
   padding-left: 20px;
   padding-bottom: 0px;
 }
+head1{
+  font-size: 60px;
+  color: #00205B;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+}
+.pie {
+  --w:150px;
+
+  width: var(--w);
+  aspect-ratio: 1;
+  position: relative;
+  display: inline-grid;
+  place-content: center;
+  margin: 5px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.pie:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  inset: 0;
+  background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+  -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+  mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+.container{
+  display: flex;
+  font-size: 30px;
+  width:90%;
+  height: auto;
+  align-content: space-around;
+  margin: auto;
+  margin-bottom: 37px;
+  border:5px solid #00205B;
+  text-align: left;
+  align-items: baseline;
+}
 h1 {
   text-align: center;
   font-size: 100px;
@@ -184,18 +225,20 @@ fieldset {
 }
 .floater {
   position: fixed;
-  bottom: 100px;
-  left: 100px;
-  right: 0px;
-  width:250px;
-  height:250px;
+  bottom: 3%;
+  left: 10px;
+  width:150px;
+  height:150px;
 }
 legend {
   background-color: transparent;
   color: #00205B;
   padding: 5px 10px;
 }
-
+#goog{
+  font-size: 50px;
+  text-align: center;
+}
 input {
   margin: 0px;
   font-family: "Oswald", sans-serif;
@@ -220,10 +263,6 @@ select{
 @media screen and (min-width:990px) {
   header{
     font-size: 60px;
-  }
-  div{
-    width: auto;
-    height: auto;
   }
 
   body {

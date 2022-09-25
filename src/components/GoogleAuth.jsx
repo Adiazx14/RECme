@@ -32,7 +32,8 @@ const GoogleAuth = () => {
 
     return (
     <div className="socialDiv">
-        <p>Sign into the App with</p>
+        <p id="goog">Welcome to RECme!</p>
+        <p id="goog">Sign in with</p>
         <button className="socialBtn" onClick={onSubmit}>
             <img alt = "google icon" className="socialImg" src={googleIcon} />
         </button>

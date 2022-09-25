@@ -5,6 +5,7 @@ import { collection, getDoc, getDocs, query } from "firebase/firestore"
 import { db } from "../firebase.config"
 import useAuthStatus from "../hooks/useAuthStatus"
 import Session from "../components/Session"
+import plus from "../images/plusicon.svg"
 
 const Main = () => {
     const navigate = useNavigate()
@@ -28,7 +29,11 @@ const Main = () => {
     }, [])
 
     return (
-        <> 
+        <>
+            <head1>Open Sessions</head1>
+            <div className="floater">
+                <img src={plus} alt="Plus Icon" align="left"/>
+            </div>
             {sessions.map((session)=>{
                     console.log(session.data)
                     return <Session key={session.id} session={session.data}/>

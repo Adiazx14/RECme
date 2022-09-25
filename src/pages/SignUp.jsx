@@ -43,6 +43,7 @@ const SignUp = () => {
     })
     return (
         <>
+            <head>RECme</head>
         <form onSubmit={onSubmit}>
             <input type="text" placeholder="name" value={name} id="name" onChange={onChange}/>
             <input type="email" placeholder="email" value={email} id="email" onChange={onChange}/>
